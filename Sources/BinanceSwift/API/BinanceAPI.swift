@@ -14,14 +14,14 @@ public struct BinanceAPI {
     public var apiKey: String
     public var secretKey: String
     
-    init(server: String = "", scheme: String = "https", key: String = "", secret: String = "") {
+    public init(server: String = "", scheme: String = "https", key: String = "", secret: String = "") {
         self.apiServer = server
         self.apiScheme = scheme
         self.apiKey = key
         self.secretKey = secret
     }
     
-    init(file: URL) {
+    public init(file: URL) {
         // make sure the file exists
         guard FileManager.default.fileExists(atPath: file.path) else {
             preconditionFailure("file expected at \(file.absoluteString) is missing")
